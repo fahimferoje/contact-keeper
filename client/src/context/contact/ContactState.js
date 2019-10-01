@@ -36,6 +36,11 @@ const ContactState = (props) => {
 
 	//add contacts
 
+	const addContact = contact => {
+		contact.id = uuid.v4();
+		dispatch({ type: ADD_CONTACT, payload: contact});
+	}
+
 	//delete contact
 
 	//set current contact
@@ -51,7 +56,8 @@ const ContactState = (props) => {
 	return (
 		<ContactContext.Provider
 			value={{
-				contacts: state.contacts
+				contacts: state.contacts,
+				addContact
 			}}
 		>
 			{props.children}
