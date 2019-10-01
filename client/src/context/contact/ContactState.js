@@ -1,4 +1,4 @@
-import React, { userReducer } from "react";
+import React, { useReducer } from "react";
 import uuid from "uuid";
 import ContactContext from "./contactContext";
 import contactReducer from "./contactReducer";
@@ -27,7 +27,7 @@ const ContactState = (props) => {
 				name: "B",
 				email: "b@b.gmail.com",
 				phone: "22-200-99",
-				type: "personal"
+				type: "professional"
 			}
 		]
 	};
@@ -54,7 +54,7 @@ const ContactState = (props) => {
 				contacts: state.contacts
 			}}
 		>
-			{this.props.childre}
+			{props.children}
 		</ContactContext.Provider>
 	);
 };
